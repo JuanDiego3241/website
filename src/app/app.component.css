@@ -1,0 +1,31 @@
+.curtain {
+    position: fixed; /* O puedes usar 'absolute' si prefieres */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white; /* Color de fondo, cambia según necesites */
+    opacity: 1; /* Ajusta la opacidad si es necesario */
+    transition: opacity 0.5s ease-in-out;
+}
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.all {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 98vh; /* Esto hace que el contenedor tenga la altura completa de la pantalla */
+    width: 98vw; /* Esto hace que el contenedor tenga la anchura completa de la pantalla */
+}

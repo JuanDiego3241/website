@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background: linear-gradient(200deg, #5A5B9F, #9BB7D4);;    
+}
+
+@font-face {
+    font-family: 'Popstar';
+    src: url('assets/fonts/popstarregular-cufonfonts/POPSTAR_pop.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Planet Kosmos';
+    src: url('assets/fonts/planet-kosmos-cufonfonts/PLANK___.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'Planet Kosmos';
+    font-size: 100px;
+    width: 60%;
+    text-align: center;
+    color: transparent;
+    background-image: linear-gradient(to left, #fdfefc, #9ca2ae, #c9c9c9, #606c7a, #fdfefc, #9ca2ae, #c9c9c9);    
+    background-clip: text;
+    animation: color 3s linear infinite;
+    background-size: 300%;
+    /*text-shadow: black 0.1em 0.1em 0.2em;     */
+}
+
+@keyframes color {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 100% 50%;
+    }
+}
