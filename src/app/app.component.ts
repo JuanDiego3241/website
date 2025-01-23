@@ -11,6 +11,11 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'website';
   showCurtain = true;
+  showModal = true;
+
+  closeModal() {
+    this.showModal = false; // Cierra el modal
+  }
 
   @ViewChild('curtainDiv') curtainDiv!: ElementRef;
 

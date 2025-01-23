@@ -1,3 +1,11 @@
+<div class="modal-overlay" *ngIf="showModal">
+  <div class="modal">
+    <h2>Bienvenido a mi blog</h2>
+    <h1>3go2002</h1>
+    <button (click)="closeModal()">Entrar</button>
+  </div>
+</div>
+
 <div *ngIf="showCurtain" (click)="changeOpacity()" [ngStyle]="{'opacity': showCurtain ? '1' : '0'}" style="cursor: pointer;">
   <div class="all">
     <h1>3go2002</h1>
@@ -5,5 +13,5 @@
 </div>
 
 <div class="headline">
-  <h2>3go2002</h2>
+  <h2>hola 3go2002</h2>
 </div>

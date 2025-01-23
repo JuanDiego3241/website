@@ -19,8 +19,8 @@ body{
 
 h1 {
     font-family: 'Planet Kosmos';
-    font-size: 100px;
-    width: 60%;
+    font-size: 40px;
+    width: 100%;
     text-align: center;
     color: transparent;
     background-image: linear-gradient(to left, #fdfefc, #9ca2ae, #c9c9c9, #606c7a, #fdfefc, #9ca2ae, #c9c9c9);    
@@ -28,6 +28,14 @@ h1 {
     animation: color 3s linear infinite;
     background-size: 300%;
     /*text-shadow: black 0.1em 0.1em 0.2em;     */
+}
+
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    color: #fdfefc; 
 }
 
 @keyframes color {
