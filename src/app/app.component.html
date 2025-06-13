@@ -1,17 +1,25 @@
-<div class="modal-overlay" *ngIf="showModal">
-  <div class="modal">
-    <h2>Bienvenido a mi blog</h2>
-    <h1>3go2002</h1>
-    <button (click)="closeModal()">Entrar</button>
-  </div>
+<div class="all">
+  <h1>3go2002</h1>
 </div>
 
-<div *ngIf="showCurtain" (click)="changeOpacity()" [ngStyle]="{'opacity': showCurtain ? '1' : '0'}" style="cursor: pointer;">
-  <div class="all">
-    <h1>3go2002</h1>
-  </div>
-</div>
+<nav class="navbar">
+  <a>Blog</a>
+  <a>Fotos</a>
+  <a>Perfil</a>
+</nav>
 
-<div class="headline">
-  <h2>hola 3go2002</h2>
+<div class="forum-layout">
+  <section class="featured-post">
+    <h2>Publicacion Destacada</h2>
+    <p>Post 1</p>
+  </section>
+
+  <section class="all-posts">
+    <h2>Todas las publicaciones</h2>
+    <ul>
+      <li>Post</li>
+      <li>Post</li>
+      <li>Post</li>
+    </ul>
+  </section>
 </div>

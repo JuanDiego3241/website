@@ -26,8 +26,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 98vh; /* Esto hace que el contenedor tenga la altura completa de la pantalla */
-    width: 98vw; /* Esto hace que el contenedor tenga la anchura completa de la pantalla */
 }
 
 .modal-overlay {
