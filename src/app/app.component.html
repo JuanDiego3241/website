@@ -8,18 +8,20 @@
   <a>Perfil</a>
 </nav>
 
-<div class="forum-layout">
-  <section class="featured-post">
-    <h2>Publicacion Destacada</h2>
-    <p>Post 1</p>
-  </section>
+<div class="retro-layout">
+  <aside class="recent-post">
+    <h2>first one</h2>
+    <p>Texto</p>
+  </aside>
 
-  <section class="all-posts">
-    <h2>Todas las publicaciones</h2>
-    <ul>
-      <li>Post</li>
-      <li>Post</li>
-      <li>Post</li>
-    </ul>
-  </section>
+  <div class="posts-horizontal">
+    <article class="post" *ngFor="let post of posts">
+      <h2 class="post-title">{{ post.title }}</h2>
+      <img class="post-img" [src]="post.imageUrl">
+      <p class="post-text">{{ post.text }}</p>
+    </article>
+    <!-- más posts aquí -->
+  </div>
+
+  
 </div>

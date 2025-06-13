@@ -34,4 +34,12 @@ export class AppComponent {
       this.cdr.detectChanges(); // Forzar la detección de cambios
     }
   }
+  posts = [
+    {
+      title: '21 savage',
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdA9LHkFeXPCPXkp585S2JtlcHYqQUPqIwsA&s',
+      text: 'Este es 21 savage.'
+    },
+  ];
+  
 }
