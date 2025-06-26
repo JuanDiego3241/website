@@ -17,8 +17,17 @@
   <div class="posts-horizontal">
     <article class="post" *ngFor="let post of posts">
       <h2 class="post-title">{{ post.title }}</h2>
-      <img class="post-img" [src]="post.imageUrl">
-      <p class="post-text">{{ post.text }}</p>
+      <div class="post-body">
+        <div class="img-wrap">
+          <img class="post-img"
+               [src]="post.imageUrl"
+               [alt]="'Imagen de ' + post.title"
+               loading="lazy">
+        </div>
+        <div class="text-wrap">
+          <p class="post-text">{{ post.text }}</p>
+        </div>
+      </div>
     </article>
     <!-- más posts aquí -->
   </div>
