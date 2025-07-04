@@ -1,5 +1,7 @@
-import { Component, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PostService } from './services/post.service'; 
+import { Post } from './models/post.model'; // Import the Post interface or class
 
 @Component({
   selector: 'app-root',
@@ -8,10 +10,39 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'website';
   showCurtain = true;
   showModal = true;
+
+  Posts: Post[] = [];
+
+  constructor(private ps: PostService) {}
+
+  ngOnInit(){
+    this.load();
+  }
+  
+  load() {
+    this.ps.getPosts().subscribe({
+      next: (data) => {
+        console.log('Posts loaded:', data);
+        this.Posts = data;
+      },
+      error: (err) => console.error('Error loading posts:', err)
+    });
+  }
+
+  /*
+  addPost() {
+    const sample = {
+      Title: 'Hola!',
+      Image: 'https://via.placeholder.com/150',
+      Content: 'Este es un post desde Angular',
+    };
+    this.ps.createPost(sample).subscribe(() => this.load());
+  }
+  */
 
   closeModal() {
     this.showModal = false; // Cierra el modal
@@ -19,27 +50,7 @@ export class AppComponent {
 
   @ViewChild('curtainDiv') curtainDiv!: ElementRef;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  
 
-  changeOpacity() {
-    if (this.showCurtain) {
-      this.curtainDiv.nativeElement.classList.add('fade-out');
-      setTimeout(() => {
-        this.showCurtain = false;
-        this.cdr.detectChanges(); // Forzar la detección de cambios
-      }, 1000);
-    } else {
-      this.showCurtain = true;
-      this.curtainDiv.nativeElement.classList.remove('fade-out');
-      this.cdr.detectChanges(); // Forzar la detección de cambios
-    }
-  }
-  posts = [
-    {
-      title: '21 savage',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdA9LHkFeXPCPXkp585S2JtlcHYqQUPqIwsA&s',
-      text: 'Este es 21 savage.'
-    },
-  ];
   
 }
